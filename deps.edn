@@ -1,0 +1,26 @@
+{:paths ["src/clj" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        metosin/reitit {:mvn/version "0.5.5"}
+        http-kit/http-kit {:mvn/version "2.3.0"}
+        org.postgresql/postgresql {:mvn/version "42.2.14"}
+        com.layerware/hugsql {:mvn/version "0.5.1"}
+        org.clojure/data.json {:mvn/version "1.0.0"}
+        integrant/integrant {:mvn/version "0.8.0"}
+        integrant/repl {:mvn/version "0.3.1"}
+        hikari-cp/hikari-cp {:mvn/version "2.13.0"}
+        cheshire {:mvn/version "5.10.0"}}
+ :aliases {:run {:main-opts ["-m" "backend.core"]}
+
+           :hot-load-deps
+           {:extra-deps {org.clojure/tools.deps.alpha
+                         {:git/url "https://github.com/clojure/tools.deps.alpha"
+                          :sha     "19d197ab221d37db750423eb970880cb87a91100"}}
+            :main-opts  ["-e" "(->>(Thread/currentThread)(.getContextClassLoader)(clojure.lang.DynamicClassLoader.)(.setContextClassLoader,(Thread/currentThread)))"]}
+
+           :nrepl
+           {:extra-deps {nrepl/nrepl                   {:mvn/version "0.7.0"}
+                         cider/cider-nrepl             {:mvn/version "0.25.0"}
+                         refactor-nrepl                {:mvn/version "2.5.0"}}
+            :main-opts  ["-m" "nrepl.cmdline"
+                         "-i"
+                         "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}}}

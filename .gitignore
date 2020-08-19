@@ -1,0 +1,15 @@
+http-requests
+/.cpcache
+/target
+/classes
+/checkouts
+.eastwood
+profiles.clj
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+.hgignore
+.hg/

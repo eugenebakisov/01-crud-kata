@@ -1,0 +1,24 @@
+{
+    "server": {
+        "port": 8080
+    }
+    "db": {
+        "adapter": "postgresql",
+        "server-name": "localhost",
+        "port-number": 5432,
+        "database-name": "patients_db",
+        "username": "postgres",
+        "password": "postgres",
+
+        "pool-name": "db-pool",
+        "auto-commit": true,
+        "register-mbeans": false,
+        "max-lifetime": 1800000,
+        "minimum-idle": 10,
+        "connection-timeout": 30000,
+        "read-only": false,
+        "maximum-pool-size": 10,
+        "idle-timeout": 600000,
+        "validation-timeout": 5000
+    }
+}
